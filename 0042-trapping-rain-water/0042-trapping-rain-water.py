@@ -22,3 +22,5 @@ class Solution:
             res+= (min(left[i],right[i]) - height[i])
             
         return res
+    
+# Brute force is to iterate through each and look to left and right max inclusive of that element check for min and subtract element 
