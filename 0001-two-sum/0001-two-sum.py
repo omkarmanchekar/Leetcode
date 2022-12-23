@@ -1,9 +1,9 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hash = {}
+        remainder = {}
         for i in range(len(nums)):
-            if(nums[i] in hash):
-                return hash[nums[i]],i
+            if(nums[i] in remainder):
+                return remainder[nums[i]],i
             
-            hash[target-nums[i]] = i
+            remainder[target-nums[i]] = i
         
