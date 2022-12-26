@@ -1,7 +1,7 @@
 class Solution:
     def maximumScore(self, nums: List[int], multipliers: List[int]) -> int:
         
-        @cache
+        @lru_cache(maxsize = 2000)
         def dp(i,left):
             if(i == m):
                 return 0
