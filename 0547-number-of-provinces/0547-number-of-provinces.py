@@ -1,5 +1,9 @@
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        
+#         using dfs to find connected components 
+
+
         nodes = []
         edges = []
         
@@ -13,8 +17,6 @@ class Solution:
                     else:
                         edges.append([i+1,j+1])
                         
-                
-            
             
         def dfs(node,edges,visited):
             visited[node] = 1
