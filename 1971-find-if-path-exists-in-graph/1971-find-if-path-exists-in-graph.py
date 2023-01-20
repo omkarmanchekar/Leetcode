@@ -13,7 +13,7 @@ class Solution:
         # print(graph)
             
         
-        visited = set()
+        visited = [0] * (n)
         # visited.append(source)
         
         # print("root visited   ",visited)
@@ -40,8 +40,8 @@ class Solution:
             if(source == destination):
                 return True
             
-            if(source not in visited):
-                visited.add(source)
+            if(visited[source] == 0):
+                visited[source] = 1
                 for v in graph[source]:
                     # print("list of element   ",graph[source])
                     # if(v not in visited):
