@@ -32,17 +32,15 @@ class Solution:
         
         unique[ord(s[0])] = 1
         res = 1
+        
         while(right < len(s)):
             if(unique[ord(s[right])] == 0):
                 res = max(res,len(s[left:right+1]))
                 unique[ord(s[right])] = 1
-                print("1",s[left:right+1])
                 right +=1 
             else:
-                # while(left != right):
                 unique[ord(s[left])] = 0
                 left += 1
-                print("2",s[left:right+1])
             
             
         return res
