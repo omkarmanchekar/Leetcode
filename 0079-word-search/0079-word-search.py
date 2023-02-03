@@ -1,14 +1,21 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-        
-        if(board == [["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"],["A","A","A","A","A","A"]]):
-            return False
-        start = word[0]
-        
-        
+    
+        start = word[0]    
         row = len(board)
         col = len(board[0])
         res = False
+        
+        if(len(word) > row*col):
+            return False
+        
+        count = Counter(sum(board,[]))
+        
+        for letter,letterCount in Counter(word).items():
+            if(count[letter] <  letterCount):
+                return False
+            
+        
         
         dummy = [[0]*col for _ in range(row)]
 
@@ -39,14 +46,10 @@ class Solution:
         for r in range(row):
             for c in range(col):
                 if(board[r][c] == start):
-                    # print(r,c,board[r][c])
                     dummy[r][c] = '#'
                     res = dfs(r,c,word[1:],dummy,res)
                     dummy[r][c] = start
-                    # print(res)
                     if(res == True):
                         return True 
                     
                     
-                    
-        # return False
