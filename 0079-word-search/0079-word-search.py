@@ -6,17 +6,24 @@ class Solution:
         col = len(board[0])
         res = False
         
+#         Pruning of test case 
+
+#         Checks if len(word) > elements of board
         if(len(word) > row*col):
             return False
-        
+#         Checks if count( of letter in word ) > count( of letter in board)
         count = Counter(sum(board,[]))
         
         for letter,letterCount in Counter(word).items():
             if(count[letter] <  letterCount):
                 return False
-            
-        
-        
+#         if count(word[0]) > count(word[-1]) then reverse the word to reduce the possible branches 
+
+        # if count[word[0]] > count[word[-1]]:
+        #     word = word[::-1]
+
+
+#         End of pruning 
         dummy = [[0]*col for _ in range(row)]
 
         for r in range(row):
