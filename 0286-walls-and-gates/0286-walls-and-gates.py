@@ -20,10 +20,19 @@ class Solution:
                 for row_off,col_off in [(0,1),(1,0),(-1,0),(0,-1)]:
                     new_row = row+row_off
                     new_col = col+ col_off
+                    # if(helper(new_row,new_col,rooms,visited)):
+                    #         queue.append((new_row,new_col,distance + 1))
+                    #         rooms[new_row][new_col] = min(distance + 1,rooms[new_row][new_col])
+                    #         visited.append((new_row,new_col))
+                    
                     if(helper(new_row,new_col,rooms,visited)):
+                        if(rooms[new_row][new_col] > distance + 1):
                             queue.append((new_row,new_col,distance + 1))
                             rooms[new_row][new_col] = min(distance + 1,rooms[new_row][new_col])
                             visited.append((new_row,new_col))
+                            
+                            
+        
                         
         
         for i in range(len(rooms)):
