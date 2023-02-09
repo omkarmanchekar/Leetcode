@@ -12,7 +12,7 @@ class Solution:
 #                     break
 #         return res
 
-# MONOTONIC STACK approach 
+# MONOTONIC STACK approach (without referring sol )
 
         res = [0] * len(temperatures)
 
