@@ -10,13 +10,17 @@ class Solution:
         
         if(root):
             string+= str(root.val)
+            
+            
         if(root.left):
             string+= "("+ self.tree2str(root.left) +")"
             if(root.right):
                 string += "("+ self.tree2str(root.right) +")"
         else:
+#             to handle if left is null but still has right 
             if(root.right):
                 string += "()("+ self.tree2str(root.right) +")"
+        
         
         return string
             
