@@ -30,42 +30,23 @@ class Solution:
         
 #         recursive function 
         def helper(x,y,length):
-            # print(x,y,length)
-            # if(length == 1):
-            #     print('1')
-            #     return 
-            # root = Node(0,True)
             
             if(checkIsLeaf(x,y,length)):
-                # print('2')
-                # root.val = 1
-                # res.append([1,grid[x][y]])
                 return Node(grid[x][y],True)
 
             root = Node(1,False)
-            # print('3')
-            # res.append([0,1])
+
             offset = length//2
-            # print("offset",offset)
+
             root.bottomLeft = helper(x+offset,y,offset)
             root.bottomRight = helper(x+offset,y+offset,offset)
             root.topLeft = helper(x,y,offset)
             root.topRight = helper(x,y+offset,offset)
-            # for xi,yi in [(x,y),(x,y+offset),(x+offset,y),(x+offset,y+offset)]:
-            #     # if(checkIsLeaf(xi,yi,offset)):
-            #     #     res.append([1,grid[xi][yi]])
-            #     # else:
-            #     helper(xi,yi,offset)
-
+           
             return root
-        # res = []
+
         return helper(0,0,len(grid))
-        # print(res)
-        
-        # return res
-                
-                
-                
+       
                 
                 
                 
