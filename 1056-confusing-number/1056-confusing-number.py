@@ -9,11 +9,11 @@ class Solution:
         for i in num:
             if(i not in confusingNumber):
                 return False
-            res = res + confusingNumber[i]
+            res = confusingNumber[i] + res
             
         print(res)
        
-        if(int(res[::-1]) == n):
+        if(int(res) == n):
             return False
         else:
             return True 
